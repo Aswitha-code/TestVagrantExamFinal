@@ -1,5 +1,7 @@
 #python code to play the songs based on the user
 # and eliminate the least recently played songs when the store becomes full.
+
+
 class SongStore:
     def __init__(self, capacity):
         self.capacity = capacity
@@ -59,21 +61,20 @@ class Node:
         self.prev = None
         self.next = None
 
-#created an object user1
-user1 = SongStore(3)
-user1.put("Ashwi","s1")
-user1.put("Ashwi","s2")
-user1.put("Ashwi","s3")
-user1.put("Ashwi","Faded")
+#created an object SongStoreObject for different users and songs they are playing
+SongStoreObject = SongStore(3)
 
-#created an object user2
-user2 = SongStore(3)
-user2.put("Nani","s1")
-user2.put("Nani","s2")
-user2.put("Nani","s3")
-user2.put("Nani","Perfect")
+SongStoreObject.put("Ashwi","s1")
+SongStoreObject.put("Ashwi","s2")
+SongStoreObject.put("Ashwi","s3")
+SongStoreObject.put("Ashwi","Faded")
 
-recent_song_for_user1 = user1.get("Ashwi")
-recent_song_for_user2 = user2.get("Nani")
+SongStoreObject.put("Nani","s1")
+SongStoreObject.put("Nani","s2")
+SongStoreObject.put("Nani","s3")
+SongStoreObject.put("Nani","Perfect")
+
+recent_song_for_user1 = SongStoreObject.get("Ashwi")
+recent_song_for_user2 = SongStoreObject.get("Nani")
 print("Recent Songs for user1: ",recent_song_for_user1)
 print("Recent Songs for user2: ",recent_song_for_user2)
